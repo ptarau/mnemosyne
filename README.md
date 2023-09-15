@@ -46,7 +46,10 @@ and then run it with:
 python -m memesis.run
 ```
 
-#### Soon, you can also try out at: https://mnemosyne.streamlit.app/
+#### You can also try it out online at: https://mnemosyne.streamlit.app/
+
+![Mnemosyne](https://github.com/[ptarau]/[nmemosyne]/blob/[main]/mnemosyne_app.png?raw=true)
+
 
 ***Enjoy***,
 
