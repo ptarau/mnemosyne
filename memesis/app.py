@@ -27,29 +27,30 @@ st.sidebar.image(os.path.dirname(__file__) + '/mnemosyne.jpg')
 local = st.sidebar.checkbox('Local LLM?', value=False)
 
 if local:
-    # st.sidebar.write(LOCAL_PARAMS['API_BASE'])
+    IS_LOCAL_LLM[0] = True
     LOCAL_PARAMS['API_BASE'] = st.sidebar.text_input('Local LLM server:', value=LOCAL_PARAMS['API_BASE'])
 else:
+    key = os.getenv("OPENAI_API_KEY")
+    if not key:
+        key = st.text_input("Enter your OPENAI_API_KEY:", "", type="password")
+        if not key:
+            st.write('Please enter your OPENAI_API_KEY!')
+            exit(0)
+        else:
+            set_openai_api_key(key)
+
     choice = st.sidebar.radio('OpenAI LLM', ['GPT-4', 'GPT-3.5'])
     if choice == 'GPT-4':
         smarter_model()
     else:
         cheaper_model()
 
-agent = Agent('memesis')
+agent = Agent('mnemosyne')
 agent.set_pattern(None)
 
 spill_it = st.sidebar.button('Spill memory')
 
-if local:
-    IS_LOCAL_LLM[0] = True
-    # print('PARAMS:', PARAMS())
-else:
 
-    key = os.getenv("OPENAI_API_KEY")
-    if not key:
-        key = st.sidebar.text_input("Enter your OPENAI_API_KEY:", "", type="password")
-        set_openai_api_key(key)
 
 initiator = st.sidebar.text_area('question:', value='Who is Mnemosyne?')
 
