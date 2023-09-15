@@ -11,7 +11,7 @@ with open("README.md", "r") as f:
 version = memesis.__version__
 setup(name='memesis',
       version=version,
-      description='Deep, recursive, goal-driven LLM explorer',
+      description="Custodian and live editor of your LLM's memory",
       long_description=long_description,
       long_description_content_type='text/markdown',
       url='https://github.com/ptarau/mnemosyne.git',

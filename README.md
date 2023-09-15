@@ -22,8 +22,6 @@
 
 #### First, you will need to acquire your OpenAI key from [here](https://openai.com/).
 
-#### with it, you are ready to try out at: https://mnemosyne.streamlit.app/
-
 If you have cloned this repo, you can install the package ```memesis``` from its folder with:
 
 ```
@@ -47,6 +45,8 @@ and then run it with:
 ```
 python -m memesis.run
 ```
+
+#### Soon, you can also try out at: https://mnemosyne.streamlit.app/
 
 ***Enjoy***,
 
