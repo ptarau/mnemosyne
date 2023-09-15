@@ -12,7 +12,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 st.set_page_config(layout="wide")
 
 st.title('[Mnemosyne](https://github.com/ptarau/mnemosyne)')
-st.write('Just keep talking: we remember it for you wholesale! :smile:')
+st.write('Just keep talking: [we remember it for you wholesale](https://a.co/d/hsqkMYY)! :smile:')
 
 
 def to_df(d):
@@ -30,7 +30,7 @@ if local:
     # st.sidebar.write(LOCAL_PARAMS['API_BASE'])
     LOCAL_PARAMS['API_BASE'] = st.sidebar.text_input('Local LLM server:', value=LOCAL_PARAMS['API_BASE'])
 else:
-    choice = st.sidebar.radio('OpenAI LLM', ['GPT-4','GPT-3.5'])
+    choice = st.sidebar.radio('OpenAI LLM', ['GPT-4', 'GPT-3.5'])
     if choice == 'GPT-4':
         smarter_model()
     else:
