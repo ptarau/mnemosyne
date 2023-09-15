@@ -34,7 +34,7 @@ else:
     if not key:
         key = st.text_input("Enter your OPENAI_API_KEY:", "", type="password")
         if not key:
-            st.write('Please enter your OPENAI_API_KEY!')
+            # st.write('Please enter your OPENAI_API_KEY!')
             exit(0)
         else:
             set_openai_api_key(key)
@@ -49,8 +49,6 @@ agent = Agent('mnemosyne')
 agent.set_pattern(None)
 
 spill_it = st.sidebar.button('Spill memory')
-
-
 
 initiator = st.sidebar.text_area('question:', value='Who is Mnemosyne?')
 
