@@ -48,7 +48,7 @@ python -m memesis.run
 
 #### You can also try it out online at: https://mnemosyne.streamlit.app/
 
-![Mnemosyne](https://github.com/[ptarau]/[nmemosyne]/blob/[main]/mnemosyne_app.png?raw=true)
+![Mnemosyne](https://github.com/ptarau/mnemosyne/blob/main/mnemosyne_app.png)
 
 
 ***Enjoy***,
