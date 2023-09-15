@@ -36,7 +36,7 @@ else:
     else:
         cheaper_model()
 
-agent = Agent('mnemosyne')
+agent = Agent('memesis')
 agent.set_pattern(None)
 
 spill_it = st.sidebar.button('Spill memory')

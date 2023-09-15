@@ -1,6 +1,6 @@
 rm -r -f dist build
 rm -r -f *.egg-info
-cd mnemosyne
+cd memesis
 rm -r -f __pycache__
 cd ..
 pwd

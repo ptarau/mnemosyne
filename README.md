@@ -18,7 +18,7 @@
 
 #### with it, you are ready to try out at: https://mnemosyne.streamlit.app/
 
-If you have cloned this repo, you can install the package ```mnemosyne``` from its folder with:
+If you have cloned this repo, you can install the package ```memesis``` from its folder with:
 
 ```
 pip3 install -e .
@@ -30,10 +30,10 @@ and then run it with:
 ./app.sh
 ```
 
-You can also install it from [pypi](https://pypi.org/search/?q=mnemosyne) with:
+You can also install it from [pypi](https://pypi.org/search/?q=memesis) with:
 
 ```
-pip3 install mnemosyne
+pip3 install memesis
 ```
 
 

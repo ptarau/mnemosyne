@@ -1,1 +1,1 @@
-streamlit run mnemosyne/app.py
+streamlit run memesis/app.py
