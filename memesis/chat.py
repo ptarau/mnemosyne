@@ -10,7 +10,6 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 
 st.set_page_config(layout="wide")
 
-
 st.title('[LLM API Chat](https://github.com/ptarau/mnemosyne)')
 
 local = st.sidebar.checkbox('Local LLM?', value=False)
@@ -34,19 +33,19 @@ else:
     else:
         cheaper_model()
 
-chat_name=st.sidebar.text_input('Chat name:','chat')
+chat_name = st.sidebar.text_input('Chat name:', 'chat')
 agent = Agent(chat_name)
 agent.set_pattern(None)
 
 spill_it = st.sidebar.button('Spill short term memory')
 clear_it = st.sidebar.button('Clear all memory')
-pop_it = st.sidebar.button('Pop last interaction from memory')
 
 initiator = st.sidebar.text_area('question:', value='What is nothing?')
 
 query_it = st.sidebar.button('Answer')
 
-out=st.empty()
+out = st.empty()
+
 
 def show_mem(mem, key):
     if mem:
@@ -59,8 +58,18 @@ def show_mem(mem, key):
 def show():
     out.empty()
     with out.container():
-      show_mem(agent.short_mem, 'Short term memory:')
-      show_mem(agent.long_mem, 'Long term memory:')
+        show_mem(agent.short_mem, 'Short term memory:')
+        show_mem(agent.long_mem, 'Long term memory:')
+
+
+def pop_it():
+    if agent.short_mem:
+        agent.short_mem.popitem()
+        agent.persist()
+        show()
+
+
+st.sidebar.button('Forget last interaction!', on_click=pop_it)
 
 
 def do_query():
@@ -85,9 +94,3 @@ if clear_it:
     agent.clear()
     out.empty()
     show()
-
-if pop_it:
-    if agent.short_mem:
-        agent.short_mem.popitem()
-        agent.persist()
-        show()
