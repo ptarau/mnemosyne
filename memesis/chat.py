@@ -15,8 +15,9 @@ st.title('[LLM API Chat](https://github.com/ptarau/mnemosyne)')
 local = st.sidebar.checkbox('Local LLM?', value=False)
 
 if local:
-    IS_LOCAL_LLM[0] = True
+
     LOCAL_PARAMS['API_BASE'] = st.sidebar.text_input('Local LLM server:', value=LOCAL_PARAMS['API_BASE'])
+    local_model()
 else:
     key = os.getenv("OPENAI_API_KEY")
     if not key:

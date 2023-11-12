@@ -27,8 +27,8 @@ st.sidebar.image(os.path.dirname(__file__) + '/mnemosyne.jpg')
 local = st.sidebar.checkbox('Local LLM?', value=False)
 
 if local:
-    IS_LOCAL_LLM[0] = True
     LOCAL_PARAMS['API_BASE'] = st.sidebar.text_input('Local LLM server:', value=LOCAL_PARAMS['API_BASE'])
+    local_model()
 else:
     key = os.getenv("OPENAI_API_KEY")
     if not key:
